@@ -16,6 +16,8 @@ const MortalSpecies = require('./queries/MortalSpecies').modules;
 const CountGender = require('./queries/CountGender').modules;
 const AverageHeight = require('./queries/AverageHeight').modules;
 const GunganBasic = require('./queries/GunganBasic').modules;
+const BiggerPlanet = require('./queries/BiggerPlanet').modules;
+
 
 (async () => {
   const firstMovie = await new FirstMovie().request();
@@ -23,8 +25,9 @@ const GunganBasic = require('./queries/GunganBasic').modules;
   const countGender = await new CountGender().request();
   const averageHeight = await new AverageHeight().request();
   const gunganBasic = await new GunganBasic().request();
+  const biggerPlanet = await new BiggerPlanet().request();
 
-  gunganBasic.forEach(character => {
-    console.log(character.get('name'));
-  })
+  biggerPlanet.forEach(element => {
+    console.log(element.get('name'));
+  });
 })();
