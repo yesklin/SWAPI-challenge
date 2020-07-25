@@ -14,10 +14,17 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 const FirstMovie = require('./queries/FirstMovie').modules;
 const MortalSpecies = require('./queries/MortalSpecies').modules;
 const CountGender = require('./queries/CountGender').modules;
+const AverageHeight = require('./queries/AverageHeight').modules;
+const GunganBasic = require('./queries/GunganBasic').modules;
 
 (async () => {
   const firstMovie = await new FirstMovie().request();
   const mortalSpecies = await new MortalSpecies().request();
   const countGender = await new CountGender().request();
+  const averageHeight = await new AverageHeight().request();
+  const gunganBasic = await new GunganBasic().request();
 
+  guganBasic.forEach(character => {
+    console.log(character.get('name'));
+  })
 })();
