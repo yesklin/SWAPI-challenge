@@ -1,28 +1,21 @@
 
-//requirements
+//moduele requirements
 const Parse = require('parse/node');
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const FirstMovie = require('./queries/firstMovie').modules;
 require('dotenv').config();
 
+//imports 
 
 //connecting to server
 Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
 Parse.serverURL = "https://parseapi.back4app.com/";
 
-//testing querie
-const Film = Parse.Object.extend("Film");
-const query = new Parse.Query(Film);
 
 
-const requestData = async (query) => {
-  const response = await query.find();
-  return response; 
-}
+//resquesting data from server
+(async = () => {
 
-requestData(query).then(response =>{
+  const firstMovie = await FirstMovie.request();
 
-  for(let aux = 0; aux < response.length; aux++ ){
-    let object = response[aux];
-    console.log(object.get('title'));
-  }
-  
-})
+})();
