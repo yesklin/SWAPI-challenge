@@ -24,7 +24,7 @@ const GunganBasic = require('./queries/GunganBasic').modules;
   const averageHeight = await new AverageHeight().request();
   const gunganBasic = await new GunganBasic().request();
 
-  guganBasic.forEach(character => {
+  gunganBasic.forEach(character => {
     console.log(character.get('name'));
   })
 })();
