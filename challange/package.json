@@ -9,6 +9,7 @@
   "author": "Carlos Daniel",
   "license": "ISC",
   "dependencies": {
+    "csv-writer": "^1.6.0",
     "dotenv": "^8.2.0",
     "parse": "^2.15.0"
   }
