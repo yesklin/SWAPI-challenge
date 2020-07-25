@@ -2,7 +2,6 @@
 //moduele requirements
 const Parse = require('parse/node');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const FirstMovie = require('./queries/firstMovie').modules;
 require('dotenv').config();
 
 //imports 
@@ -12,10 +11,12 @@ Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
 Parse.serverURL = "https://parseapi.back4app.com/";
 
 
+//requiring queries
+const FirstMovie = require('./queries/firstMovie').modules;
+const MortalSpecies = require('./queries/mortalSpecies').modules;
 
-//resquesting data from server
-(async = () => {
-
-  const firstMovie = await FirstMovie.request();
-
+(async () => {
+  const firstMovie = await new FirstMovie().request();
+  const mortalSpecies = await new MortalSpecies().request();
+  console.log(mortalSpecies);
 })();
