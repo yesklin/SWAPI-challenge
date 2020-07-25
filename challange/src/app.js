@@ -4,7 +4,6 @@ const Parse = require('parse/node');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 require('dotenv').config();
 
-//imports 
 
 //connecting to server
 Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
