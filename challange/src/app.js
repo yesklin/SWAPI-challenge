@@ -14,9 +14,12 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 //requiring queries
 const FirstMovie = require('./queries/firstMovie').modules;
 const MortalSpecies = require('./queries/mortalSpecies').modules;
+const CountGender = require('./queries/CountGender').modules;
 
 (async () => {
   const firstMovie = await new FirstMovie().request();
   const mortalSpecies = await new MortalSpecies().request();
-  console.log(mortalSpecies);
+  const countGender = await new CountGender().request();
+
+  console.log(countGender);
 })();
