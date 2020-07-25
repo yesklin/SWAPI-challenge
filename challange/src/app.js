@@ -12,8 +12,8 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 
 
 //requiring queries
-const FirstMovie = require('./queries/firstMovie').modules;
-const MortalSpecies = require('./queries/mortalSpecies').modules;
+const FirstMovie = require('./queries/FirstMovie').modules;
+const MortalSpecies = require('./queries/MortalSpecies').modules;
 const CountGender = require('./queries/CountGender').modules;
 
 (async () => {
@@ -21,5 +21,4 @@ const CountGender = require('./queries/CountGender').modules;
   const mortalSpecies = await new MortalSpecies().request();
   const countGender = await new CountGender().request();
 
-  console.log(countGender);
 })();
