@@ -14,8 +14,15 @@ class BiggerPlanet{
     const Character = Parse.Object.extend("Character");
     const charQuery = new Parse.Query(Character);
     charQuery.equalTo("homeworld", mostPopulatedPlanet);
-    return await charQuery.find();
+    const result  = await charQuery.find();
 
+    const returnable = []
+
+    result.forEach(element => {
+      returnable.push(element.get('name'));
+    });
+  
+    return returnable;
   }
 
 }

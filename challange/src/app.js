@@ -19,7 +19,7 @@ const GunganBasic = require('./queries/GunganBasic').modules;
 const BiggerPlanet = require('./queries/BiggerPlanet').modules;
 
 
-(async () => {
+(async () => { //requesting data and creating csv file.
   const firstMovie = await new FirstMovie().request();
   const mortalSpecies = await new MortalSpecies().request();
   const countGender = await new CountGender().request();
@@ -27,7 +27,5 @@ const BiggerPlanet = require('./queries/BiggerPlanet').modules;
   const gunganBasic = await new GunganBasic().request();
   const biggerPlanet = await new BiggerPlanet().request();
 
-  biggerPlanet.forEach(element => {
-    console.log(element.get('name'));
-  });
+
 })();

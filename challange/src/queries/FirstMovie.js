@@ -10,7 +10,7 @@ class FirstMovie{
     query.select("title", "releaseDate").ascending(); //constrains
     const response = await query.find();
     const firstMovie = response[0];
-    return firstMovie;
+    return firstMovie.get('title');
   }
 
 }
