@@ -10,7 +10,7 @@ const averageHeightQuery = async (Parse) => {
     return response;
 }
   
-const averageHeight = async(Parse) => { //finds the average height of the characters
+const findAverageHeight = async(Parse) => { //finds the average height of the characters
   
     try {
   
@@ -32,7 +32,7 @@ const averageHeight = async(Parse) => { //finds the average height of the charac
     }
 }
 
-exports.modules = averageHeight;
+exports.modules = findAverageHeight;
 
 
 
