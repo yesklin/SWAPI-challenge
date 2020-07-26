@@ -8,7 +8,7 @@ require('dotenv').config();
 //connecting to server
 Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
 Parse.serverURL = "https://parseapi.back4app.com/";
-
+console.log(process.env.APP_ID);
 
 //requiring queries
 const FirstMovie = require('./queries/FirstMovie').modules;
@@ -24,12 +24,12 @@ const BiggerPlanet = require('./queries/BiggerPlanet').modules;
   console.log("O seu arquivo CSV está sendo criado");
 
 
-  const firstMovie = await new FirstMovie().request();
-  const mortalSpecies = await new MortalSpecies().request();
-  const countGender = await new CountGender().request();
-  const averageHeight = await new AverageHeight().request();
-  const gunganBasic = await new GunganBasic().request();
-  const biggerPlanet = await new BiggerPlanet().request();
+  const firstMovie = await new FirstMovie(Parse).request();
+  const mortalSpecies = await new MortalSpecies(Parse).request();
+  const countGender = await new CountGender(Parse).request();
+  const averageHeight = await new AverageHeight(Parse).request();
+  const gunganBasic = await new GunganBasic(Parse).request();
+  const biggerPlanet = await new BiggerPlanet(Parse).request();
 
   const csvWriter = createCsvWriter({
     path: 'respostas.csv',

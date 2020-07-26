@@ -1,12 +1,15 @@
-const Parse = require('parse/node');
 
 class CountGender {
     
-  request = async () => {
-    const Character = Parse.Object.extend("Character"); //extending class
+  constructor(Parse){
+    this.Parse = Parse;
+  }
 
-    const maleQuery = new Parse.Query(Character); // creating query
-    const femaleQuery = new Parse.Query(Character);
+  request = async () => {
+    const Character = this.Parse.Object.extend("Character"); //extending class
+
+    const maleQuery = new this.Parse.Query(Character); // creating query
+    const femaleQuery = new this.Parse.Query(Character);
 
     maleQuery.equalTo('gender', 'male');
     femaleQuery.equalTo('gender', 'female');
