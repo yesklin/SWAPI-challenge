@@ -5,11 +5,11 @@ Challange. Consuming a star wars database using node.js and parse
 
 ### Installation and Usage
 
-```js
+```sh
 npm install
 ```
 
-```js
+```sh
 npm start
 ```
 
