@@ -1,2 +1,20 @@
 # gimme-star-wars
-<h3>Challange. Consuming a star wars database using node.js and parse</h3>
+
+Challange. Consuming a star wars database using node.js and parse
+=====================
+
+### Installation and Usage
+
+```js
+npm install
+```
+
+```js
+npm start
+```
+
+### Tests
+
+```sh
+npm test
+```
