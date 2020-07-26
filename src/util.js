@@ -21,7 +21,7 @@ const findAverageHeight = async (Parse) => { //recieves an array objects and ret
 
 
 const mortalSpeciesQuery = require('../src/queries/mortalSpecies').modules;
-const findMortalSpecies = async(Parse) => { //recieves an array of objects and finds the smallest average lifespans and returns its names.
+const findMortalSpecies = async(Parse) => { //recieves an array of objects, finds the smallest average lifespans and returns its names.
 
   try {
     const response = await mortalSpeciesQuery(Parse);
@@ -49,7 +49,7 @@ const findMortalSpecies = async(Parse) => { //recieves an array of objects and f
 }
 
 const guganBasicQuery = require('./queries/gunganBasic').modules;
-const findGunganBasic = async (Parse) => {
+const findGunganBasic = async (Parse) => { //recieves an array of objects and return its names
 
   response = await guganBasicQuery(Parse);
 
