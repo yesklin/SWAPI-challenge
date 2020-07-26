@@ -11,12 +11,12 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 console.log(process.env.APP_ID);
 
 //requiring queries
-const FirstMovie = require('./queries/FirstMovie').modules;
-const MortalSpecies = require('./queries/MortalSpecies').modules;
-const CountGender = require('./queries/CountGender').modules;
-const AverageHeight = require('./queries/AverageHeight').modules;
-const GunganBasic = require('./queries/GunganBasic').modules;
-const BiggerPlanet = require('./queries/BiggerPlanet').modules;
+const findFirstMovie = require('./queries/firstMovie').modules;
+const findMortalSpecies = require('./queries/mortalSpecies').modules;
+const finCountGender = require('./queries/countGender').modules;
+const findAverageHeight = require('./queries/averageHeight').modules;
+const findGunganBasic = require('./queries/gunganBasic').modules;
+const findBiggerPlanet = require('./queries/biggerPlanet').modules;
 
 
 (async () => { //requesting data and creating csv file.
@@ -24,12 +24,12 @@ const BiggerPlanet = require('./queries/BiggerPlanet').modules;
   console.log("O seu arquivo CSV está sendo criado");
 
 
-  const firstMovie = await new FirstMovie(Parse).request();
-  const mortalSpecies = await new MortalSpecies(Parse).request();
-  const countGender = await new CountGender(Parse).request();
-  const averageHeight = await new AverageHeight(Parse).request();
-  const gunganBasic = await new GunganBasic(Parse).request();
-  const biggerPlanet = await new BiggerPlanet(Parse).request();
+  const firstMovie = await findFirstMovie(Parse);
+  const mortalSpecies = await findMortalSpecies(Parse);
+  const countGender = await finCountGender(Parse);
+  const averageHeight = await findAverageHeight(Parse);
+  const gunganBasic = await findGunganBasic(Parse);
+  const biggerPlanet = await findBiggerPlanet(Parse);
 
   const csvWriter = createCsvWriter({
     path: 'respostas.csv',
