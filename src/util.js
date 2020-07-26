@@ -50,5 +50,19 @@ const findMortalSpecies = async(Parse) => { //recieves an array of objects and f
   }
 }
 
-exports.modules = {findAverageHeight, findMortalSpecies};
+const guganBasicQuery = require('./queries/gunganBasic').modules;
+const findGunganBasic = async (Parse) => {
+
+  response = await guganBasicQuery(Parse);
+
+  let gunganBasicSpeakers = []
+
+  response.forEach(object => {
+    gunganBasicSpeakers.push(object.get('name'));
+  })
+
+  return gunganBasicSpeakers;
+}
+
+exports.modules = {findAverageHeight, findMortalSpecies, findGunganBasic};
 

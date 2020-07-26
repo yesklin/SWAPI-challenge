@@ -1,6 +1,6 @@
 
 
-const findGunganBasic = async (Parse) => {
+const gunganBasicQuery = async (Parse) => {
   const Specie = Parse.Object.extend("Specie");
   const Character = Parse.Object.extend("Character");
   const innerQuery = new Parse.Query(Specie);
@@ -11,12 +11,7 @@ const findGunganBasic = async (Parse) => {
   const result = await query.find();
   const returnable = [];
 
-  result.forEach(element => {
-    returnable.push(element.get('name'));
-  })
-
-  return returnable;
 }
 
 
-exports.modules = findGunganBasic;
+exports.modules = gunganBasicQuery;
