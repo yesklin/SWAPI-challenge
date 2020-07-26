@@ -15,7 +15,7 @@ class CountGender {
     const females = await femaleQuery.count();
     
 
-    return [males, females];
+    return ["M:"+males, "F:"+females];
   }
 
 

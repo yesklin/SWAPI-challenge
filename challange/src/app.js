@@ -27,5 +27,31 @@ const BiggerPlanet = require('./queries/BiggerPlanet').modules;
   const gunganBasic = await new GunganBasic().request();
   const biggerPlanet = await new BiggerPlanet().request();
 
+  const csvWriter = createCsvWriter({
+    path: 'out.csv',
+    header: [
+      {id: 'first', title: 'Pergunta 1'},
+      {id: 'second', title: 'Pergunta 2'},
+      {id: 'third', title: 'Pergunta 3'},
+      {id: 'fourth', title: 'Pergunta 4'},
+      {id: 'fiveth', title: 'Pergunta 6'},
+      {id: 'sixth', title: 'Pergunta 6'}
+    ],
+    fieldDelimiter: ";"
+  });
+  
+  const data = [
+    {
+      first: firstMovie,
+      second: mortalSpecies,
+      third: countGender,
+      fourth: averageHeight,
+      fiveth: gunganBasic,
+      sixth: biggerPlanet
+    }
+  ];
+  
+  csvWriter.writeRecords(data)
+
 
 })();

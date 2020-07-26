@@ -27,7 +27,7 @@ class AverageHeight {
         count++;
       });
 
-      return sum/count;
+      return ((sum/count)/100).toFixed(3);
 
     }
     catch (err) {
