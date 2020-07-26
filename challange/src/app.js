@@ -20,6 +20,10 @@ const BiggerPlanet = require('./queries/BiggerPlanet').modules;
 
 
 (async () => { //requesting data and creating csv file.
+
+  console.log("O seu arquivo CSV está sendo criado");
+
+
   const firstMovie = await new FirstMovie().request();
   const mortalSpecies = await new MortalSpecies().request();
   const countGender = await new CountGender().request();
@@ -28,7 +32,7 @@ const BiggerPlanet = require('./queries/BiggerPlanet').modules;
   const biggerPlanet = await new BiggerPlanet().request();
 
   const csvWriter = createCsvWriter({
-    path: 'out.csv',
+    path: 'respostas.csv',
     header: [
       {id: 'first', title: 'Pergunta 1'},
       {id: 'second', title: 'Pergunta 2'},
@@ -52,6 +56,7 @@ const BiggerPlanet = require('./queries/BiggerPlanet').modules;
   ];
   
   csvWriter.writeRecords(data)
+  console.log("Seu arquivo CSV está disponível: gimme-star-wars/respostas.csv");
 
 
 })();
