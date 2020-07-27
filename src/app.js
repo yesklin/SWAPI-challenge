@@ -10,11 +10,14 @@ Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
 Parse.serverURL = "https://parseapi.back4app.com/";
 
 //requiring queries
-const findFirstMovie = require('./queries/firstMovie').modules;
-const findCountGender = require('./queries/countGender').modules;
-const findGunganBasic = require('./queries/gunganBasic').modules;
-const findBiggerPlanet = require('./queries/biggerPlanet').modules;
-const {findAverageHeight, findMortalSpecies} = require('./util').modules;
+const {
+  findAverageHeight,
+  findMortalSpecies,
+  findFirstMovie,
+  findCountGender,
+  findGunganBasic,
+  findBiggerPlanet
+} = require('./util').modules;
 
 
 
@@ -43,7 +46,7 @@ const {findAverageHeight, findMortalSpecies} = require('./util').modules;
     ],
     fieldDelimiter: ";"
   });
-  
+
   const data = [
     {
       first: firstMovie,
@@ -54,7 +57,7 @@ const {findAverageHeight, findMortalSpecies} = require('./util').modules;
       sixth: biggerPlanet
     }
   ];
-  
+
   csvWriter.writeRecords(data)
   console.log("Seu arquivo CSV está disponível: gimme-star-wars/respostas.csv");
 

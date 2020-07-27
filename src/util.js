@@ -3,7 +3,7 @@ const averageHeightQuery = require('./queries/averageHeight').modules;
 const findAverageHeight = async (Parse) => { //recieves an array objects and return the average of its attribute: 'height'.
   try {
     const heights = await averageHeightQuery(Parse);
-    
+
     let sum = 0;
 
     heights.forEach(object => {
@@ -35,10 +35,10 @@ const findMortalSpecies = async(Parse) => { //recieves an array of objects, find
 
       if(currentAverageLifespan > smallestAverageLifespan)
         break;
-      
+
       else if(currentAverageLifespan === smallestAverageLifespan)
         names.push(response[aux].get('name'));
-    
+
     }
 
     return names;
@@ -48,13 +48,14 @@ const findMortalSpecies = async(Parse) => { //recieves an array of objects, find
   }
 }
 
+
+
+
 const guganBasicQuery = require('./queries/gunganBasic').modules;
 const findGunganBasic = async (Parse) => { //recieves an array of objects and return its names
 
-  response = await guganBasicQuery(Parse);
-
-  let gunganBasicSpeakers = []
-
+  const response = await guganBasicQuery(Parse);
+  const gunganBasicSpeakers = [];
   response.forEach(object => {
     gunganBasicSpeakers.push(object.get('name'));
   })
@@ -62,5 +63,32 @@ const findGunganBasic = async (Parse) => { //recieves an array of objects and re
   return gunganBasicSpeakers;
 }
 
-exports.modules = {findAverageHeight, findMortalSpecies, findGunganBasic};
 
+
+
+const firstMovieQuery = require('./queries/firstMovie').modules;
+const findFirstMovie = async (Parse) => { //recieves an array of objects and return its names
+  return await firstMovieQuery(Parse);
+}
+
+
+
+const countGenderQuery = require('./queries/countGender').modules;
+const findCountGender = async (Parse) => { //recieves an array of objects and return its names
+  return await countGenderQuery(Parse);
+}
+
+const biggerPlanetQuery = require('./queries/biggerPlanet').modules;
+const findBiggerPlanet = async (Parse) => { //recieves an array of objects and return its names
+  return await biggerPlanetQuery(Parse);
+}
+
+
+exports.modules = {
+  findAverageHeight,
+  findMortalSpecies,
+  findGunganBasic,
+  findFirstMovie,
+  findCountGender,
+  findBiggerPlanet
+  };

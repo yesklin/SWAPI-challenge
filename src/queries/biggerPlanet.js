@@ -1,6 +1,6 @@
 
-const findBiggerPlanet = async (Parse) =>  {
-  
+const biggerPlanetQuery = async (Parse) =>  {
+
   const Planet = Parse.Object.extend("Planet");
   const query = new Parse.Query(Planet);
   query.descending("population");
@@ -14,4 +14,4 @@ const findBiggerPlanet = async (Parse) =>  {
 
 }
 
-exports.modules = findBiggerPlanet;
+exports.modules = biggerPlanetQuery;

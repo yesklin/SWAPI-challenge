@@ -1,7 +1,7 @@
 
 
 
-const findFirstMovie = async (Parse) => {
+const firstMovieQuery = async (Parse) => {
   const Film = Parse.Object.extend("Film"); //extending class
   const query = new Parse.Query(Film); // creating query
   query.select("title", "releaseDate").ascending(); //constrains
@@ -12,4 +12,4 @@ const findFirstMovie = async (Parse) => {
 
 
 
-exports.modules = findFirstMovie;
+exports.modules = firstMovieQuery;

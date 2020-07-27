@@ -8,8 +8,7 @@ const gunganBasicQuery = async (Parse) => {
   const query = new Parse.Query(Character);
   query.matchesQuery("species", innerQuery);
   // comments now contains the comments for posts with images.
-  const result = await query.find();
-  const returnable = [];
+  return await query.find();
 
 }
 

@@ -1,6 +1,6 @@
 
 
-const findCountGender = async (Parse) => {
+const countGenderQuery = async (Parse) => {
   const Character = Parse.Object.extend("Character"); //extending class
 
   const maleQuery = new Parse.Query(Character); // creating query
@@ -11,11 +11,11 @@ const findCountGender = async (Parse) => {
 
   const males = await maleQuery.count();
   const females = await femaleQuery.count();
-  
 
-  return ["M:"+males, "F:"+females];
+
+  return ["M:"+males, "F"+females];
 }
 
 
 
-exports.modules = findCountGender;
+exports.modules = countGenderQuery;
