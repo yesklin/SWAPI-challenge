@@ -50,7 +50,6 @@ const findMortalSpecies = async(Parse) => { //recieves an array of objects, find
 
 
 
-
 const guganBasicQuery = require('./queries/gunganBasic').modules;
 const findGunganBasic = async (Parse) => { //recieves an array of objects and return its names
 
@@ -65,21 +64,22 @@ const findGunganBasic = async (Parse) => { //recieves an array of objects and re
 
 
 
-
 const firstMovieQuery = require('./queries/firstMovie').modules;
-const findFirstMovie = async (Parse) => { //recieves an array of objects and return its names
+const findFirstMovie = async (Parse) => {
   return await firstMovieQuery(Parse);
 }
 
 
 
 const countGenderQuery = require('./queries/countGender').modules;
-const findCountGender = async (Parse) => { //recieves an array of objects and return its names
+const findCountGender = async (Parse) => {
   return await countGenderQuery(Parse);
 }
 
+
+
 const biggerPlanetQuery = require('./queries/biggerPlanet').modules;
-const findBiggerPlanet = async (Parse) => { //recieves an array of objects and return its names
+const findBiggerPlanet = async (Parse) => { 
   return await biggerPlanetQuery(Parse);
 }
 
@@ -91,4 +91,4 @@ exports.modules = {
   findFirstMovie,
   findCountGender,
   findBiggerPlanet
-  };
+};

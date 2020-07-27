@@ -59,7 +59,7 @@ const {
   ];
 
   csvWriter.writeRecords(data)
-  console.log("Seu arquivo CSV está disponível: gimme-star-wars/respostas.csv");
+  console.log("Seu arquivo CSV está disponível: ./respostas.csv");
 
 
 })();

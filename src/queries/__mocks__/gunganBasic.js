@@ -27,3 +27,5 @@ const guganBasicQuery = async (Parse) =>  {
   ] 
 
 }
+
+exports.modules = guganBasicQuery;
