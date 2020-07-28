@@ -1,8 +1,9 @@
 # gimme-star-wars
 
-<h3>Consuming a star wars database using node.js and parse</h3>
-=====================
+<h2>Consuming a star wars database using node.js and parse</h2>
+==============================================================
 
+<h4>This system consumes a starwars database to answer 6 questions:</h4>
 <ul>
   <li>What's the name of the first film released?</li>
   <li>Which species live less in average?</li>
@@ -11,6 +12,7 @@
   <li>How many characters speak the language Gugan basic?</li>
   <li>How many characters live in the most populated planet?</li>
 </ul>
+
 
 ### Installation and Usage
 
@@ -24,8 +26,10 @@ or
 yarn install
 yarn start
 ```
+Then a csv file will be genereted with the 6 answers of the challange of the root of the project. 
 
-### Tests
+
+### Testing
 
 ```sh
 npm test
