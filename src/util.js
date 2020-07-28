@@ -10,7 +10,7 @@ const findAverageHeight = async (Parse) => { //recieves an array objects and ret
       sum = sum + object.get("height");
     });
 
-    return ((sum/heights.length)/100).toFixed(3);
+    return ((sum/heights.length)/100).toFixed(2);
   }
   catch (err) {
     console.log(err);
