@@ -1,4 +1,4 @@
-# gimme-star-wars
+# SWAPI-challenge
 
 <h2>Consuming a star wars database using node.js and Parse SDK</h2>
 ==============================================================
