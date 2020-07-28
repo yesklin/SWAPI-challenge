@@ -3,7 +3,7 @@
 <h2>Consuming a star wars database using node.js and Parse SDK</h2>
 ==============================================================
 
-<h4>This system consumes a starwars database to answer 6 questionsa:</h4>
+<h4>This system consumes a starwars database to answer 6 questions:</h4>
 <ul>
   <li>What's the name of the first film released?</li>
   <li>Which species live less in average?</li>
