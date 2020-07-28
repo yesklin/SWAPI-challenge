@@ -1,3 +1,5 @@
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+
 
 const averageHeightQuery = require('./queries/averageHeight').modules;
 const findAverageHeight = async (Parse) => { //recieves an array objects and return the average of its attribute: 'height'.
@@ -83,6 +85,34 @@ const findBiggerPlanet = async (Parse) => {
   return await biggerPlanetQuery(Parse);
 }
 
+const createCSVfile = async (answer1, answer2, answer3, answer4, answer5, answer6) => {
+  const csvWriter = createCsvWriter({
+    path: 'respostas.csv',
+    header: [
+      {id: 'first', title: 'Pergunta 1'},
+      {id: 'second', title: 'Pergunta 2'},
+      {id: 'third', title: 'Pergunta 3'},
+      {id: 'fourth', title: 'Pergunta 4'},
+      {id: 'fiveth', title: 'Pergunta 6'},
+      {id: 'sixth', title: 'Pergunta 6'}
+    ],
+    fieldDelimiter: ";"
+  });
+
+  const data = [
+    {
+      first: answer1,
+      second: answer2,
+      third: answer3,
+      fourth: answer4,
+      fiveth: answer5,
+      sixth: answer6
+    }
+  ];
+
+  csvWriter.writeRecords(data)
+}
+
 
 exports.modules = {
   findAverageHeight,
@@ -90,5 +120,6 @@ exports.modules = {
   findGunganBasic,
   findFirstMovie,
   findCountGender,
-  findBiggerPlanet
+  findBiggerPlanet,
+  createCSVfile
 };

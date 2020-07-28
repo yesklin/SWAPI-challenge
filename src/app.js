@@ -1,7 +1,6 @@
 
 //moduele requirements
 const Parse = require('parse/node');
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 require('dotenv').config();
 
 
@@ -9,14 +8,15 @@ require('dotenv').config();
 Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
 Parse.serverURL = "https://parseapi.back4app.com/";
 
-//requiring queries
+//requiring util
 const {
   findAverageHeight,
   findMortalSpecies,
   findFirstMovie,
   findCountGender,
   findGunganBasic,
-  findBiggerPlanet
+  findBiggerPlanet,
+  createCSVfile
 } = require('./util').modules;
 
 
@@ -26,7 +26,6 @@ const {
 
   console.log("> Your csv file is being created. Pleas wait a moment");
 
-
   const firstMovie = await findFirstMovie(Parse);
   const mortalSpecies = await findMortalSpecies(Parse);
   const countGender = await findCountGender(Parse);
@@ -34,32 +33,8 @@ const {
   const gunganBasic = await findGunganBasic(Parse);
   const biggerPlanet = await findBiggerPlanet(Parse);
 
-  const csvWriter = createCsvWriter({
-    path: 'respostas.csv',
-    header: [
-      {id: 'first', title: 'Pergunta 1'},
-      {id: 'second', title: 'Pergunta 2'},
-      {id: 'third', title: 'Pergunta 3'},
-      {id: 'fourth', title: 'Pergunta 4'},
-      {id: 'fiveth', title: 'Pergunta 6'},
-      {id: 'sixth', title: 'Pergunta 6'}
-    ],
-    fieldDelimiter: ";"
-  });
+  await createCSVfile(firstMovie, mortalSpecies, countGender, averageHeight,gunganBasic,biggerPlanet);
 
-  const data = [
-    {
-      first: firstMovie,
-      second: mortalSpecies,
-      third: countGender,
-      fourth: averageHeight,
-      fiveth: gunganBasic,
-      sixth: biggerPlanet
-    }
-  ];
-
-  csvWriter.writeRecords(data)
   console.log("> You csv file is ready and avaliable at: ./respostas.csv");
-
 
 })();
