@@ -24,7 +24,7 @@ const {
 
 (async () => { //requesting data and creating csv file.
 
-  console.log("O seu arquivo CSV está sendo criado");
+  console.log("> Your csv file is being created. Pleas wait a moment");
 
 
   const firstMovie = await findFirstMovie(Parse);
@@ -59,7 +59,7 @@ const {
   ];
 
   csvWriter.writeRecords(data)
-  console.log("Seu arquivo CSV está disponível: ./respostas.csv");
+  console.log("> You csv file is ready and avaliable at: ./respostas.csv");
 
 
 })();
