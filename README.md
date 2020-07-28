@@ -39,10 +39,11 @@ or
 yarn test
 ```
 ### Dependencies
-
-<ul>
+<ul></li>
   <li>csv-writer: https://github.com/ryu1kn/csv-writer</li>
   <li>dotenv: https://github.com/motdotla/dotenv</li>
   <li>parse: https://github.com/parse-community/Parse-SDK-JS</li>
+  ### Dev-Dependencies
   <li>parse-mock-db: https://github.com/Hustle/parse-mockdb</li>
+  <li>jest: https://github.com/facebook/jest</li>
 </ul>
