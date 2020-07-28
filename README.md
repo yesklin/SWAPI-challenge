@@ -3,16 +3,14 @@
 <h3>Consuming a star wars database using node.js and parse</h3>
 =====================
 
-<li>
-<ul>What's the name of the first film released?</ul>
-<ul>Which species live less in average?</ul>
-<ul>How many character of which gender?</ul>
-</li>
-
-
-Qual a altura média dos personagens
-Quais personagens falam a língua Gungan basic
-Quantos personagens vivem no planeta mais populos
+<ul>
+  <li>What's the name of the first film released?</li>
+  <li>Which species live less in average?</li>
+  <li>How many character of which gender?</li>
+  <li>What's the avarage height of the characters?</li>
+  <li>How many characters speak the language Gugan basic?</li>
+  <li>How many characters live in the most populated planet?</li>
+</ul>
 
 ### Installation and Usage
 
