@@ -11,7 +11,7 @@ describe('Utils test', () => {
   
   it('Should output the average of the heights', () => {
     findAverageHeight(null).then(response => {
-      expect(response).toBe((1.8).toFixed(3));
+      expect(response).toBe((1.8).toFixed(2));
   
     }).catch(err => {
       console.log(err);
