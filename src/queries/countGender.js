@@ -13,7 +13,7 @@ const countGenderQuery = async (Parse) => {
   const females = await femaleQuery.count();
 
 
-  return ["M:"+males, "F"+females];
+  return ["M:"+males, "F:"+females];
 }
 
 
