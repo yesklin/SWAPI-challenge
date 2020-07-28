@@ -26,7 +26,7 @@ or
 yarn install
 yarn start
 ```
-Then a csv file will be genereted with the 6 answers of the challange of the root of the project. 
+Then a csv file will be genereted with the 6 answers of the challange in the root of the project. 
 
 
 ### Testing
@@ -39,3 +39,11 @@ or
 ```sh
 yarn test
 ```
+### Dependencies
+
+<ul>
+  <li>csv-writer: https://github.com/ryu1kn/csv-writer</li>
+  <li>dotenv: https://github.com/motdotla/dotenv</li>
+  <li>parse: https://github.com/parse-community/Parse-SDK-JS</li>
+  <li>parse-mock-db: https://github.com/Hustle/parse-mockdb</li>
+</ul>
