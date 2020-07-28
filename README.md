@@ -12,7 +12,7 @@
   <li>How many characters speak the language Gugan basic?</li>
   <li>How many characters live in the most populated planet?</li>
 </ul>
-<h4>Then generate a csv file will be generated with the answers in it</h1>
+<h4>Then a csv file will be generated with the answers in it</h1>
 
 
 ### Installation and Usage
