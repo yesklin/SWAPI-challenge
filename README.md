@@ -27,8 +27,6 @@ or
 yarn install
 yarn start
 ```
-Then the csv file will be genereted with the 6 answers of the challange in the root of the project. 
-
 
 ### Testing
 
